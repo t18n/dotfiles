@@ -19,7 +19,9 @@
 
 My dotfiles backup that ultilizes [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) and [Mackup](https://github.com/lra/mackup). I recommend to read up the tools to understand how they work.
 
-> NOTE: Please read the instruction very carefully before you run any command, script on your _existing_ environment. I highly recommend to take the parts you use only and not `restore` everything on your computer, since a lot of these tools are configured spefically for my needs. 🌹
+> NOTE: Please read the instruction very carefully before you run any command, script on your _existing_ environment. I highly recommend to take the parts you use only and not `restore` everything on your computer, since a lot of these tools are configured spefically for my needs.
+
+> **SERIOUSLY! [Fork this](https://github.com/turboninh/dotfiles/fork), remove stuff you don't use and make it your own.**
 
 > NOTE: VSCode provide a sync feature which is much more sophisticated than dotfiles, so it is not used here.
 
