@@ -7,6 +7,7 @@
     - [First steps](#first-steps)
     - [More steps](#more-steps)
     - [Back up changes](#back-up-changes)
+    - [Maintenance](#maintenance)
   - [Manage backup](#manage-backup)
     - [Manage apps to sync or unsync](#manage-apps-to-sync-or-unsync)
     - [Add apps to backup](#add-apps-to-backup)
@@ -64,6 +65,8 @@ Backup script is intentionally set up to run manually, which allow me to review 
 1. Go to the directory `cd ~/dotfiles`
 2. Run backup script `~/dotfiles/scripts/backup.sh`
 3. Review changes and push commit
+
+### Maintenance
 
 ## Manage backup
 

@@ -24,6 +24,7 @@ alias macinfo="~/packages/scripts/show-mac-info.sh"
 # Apps
 alias app-cleaner="~/packages/app-cleaner/app-cleaner.sh"
 alias dotfiles-backup="~/dotfiles/scripts/backup.sh"
+alias dotfiles-sync-packages="~/dotfiles/scripts/sync-packages.sh"
 
 # Aliases
 alias p="pnpm"
