@@ -1,0 +1,7 @@
+% gh-actions
+
+# Show all Actions
+act -l
+
+# Run a Github action locally
+act -j <job_name>

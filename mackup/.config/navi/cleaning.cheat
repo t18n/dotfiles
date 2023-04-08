@@ -1,0 +1,7 @@
+% Clean
+
+# Show (recursively) all node_modules in a folder
+find <path> -name "node_modules" -type d -prune -print | xargs du -chs
+
+# Remove (recursively) all node_modules in a folder
+find <path_> -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;

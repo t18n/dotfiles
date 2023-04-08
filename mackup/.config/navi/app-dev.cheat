@@ -1,0 +1,37 @@
+
+######################################################
+######################################################
+% app dev
+
+# Open Android emulator
+android-emulator -avd <emulator_name>
+
+# Open a default emulator
+emulator -avd Pixel_4_API_R
+
+# Show list of installed Android emulators
+android-emulator -list-avds
+
+# Open a simulator
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+
+# Flutter widgets kitchensink
+chrome https://x-wei.github.io/flutter_catalog/
+
+# Mirror connected Android screen
+scrcpy
+
+
+% Devices
+
+# Show a list of connected Android Devices and UUID
+adb devices
+
+# Show list of Apple connected devices and UUID
+xcrun xctrace list devices
+
+
+% android
+
+# Print Android log
+adb logcat -s <tag_name>:<priority>

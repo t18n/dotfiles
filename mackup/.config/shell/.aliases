@@ -1,0 +1,32 @@
+#
+# Aliases
+##########################################################################################
+alias cheats="code $NAVI_PATH"
+alias dotfiles="code ~/dotfiles"
+alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
+alias R="source ~/.zshrc"
+
+# Common utils
+alias list="exa"
+alias go="zoxide"
+alias view="bat"
+alias trash="trash"
+
+alias hh="hstr"
+alias search="rg"
+
+
+# Tools
+alias systeminfo="neofetch && macinfo"
+alias gitinfo="neofetch"
+alias macinfo="~/packages/scripts/show-mac-info.sh"
+
+# Apps
+alias app-cleaner="~/packages/app-cleaner/app-cleaner.sh"
+alias dotfiles-backup="~/dotfiles/scripts/automate-backup.sh"
+
+# Aliases
+alias p="pnpm"
+alias y="yarn"
+alias n="npm"
+alias la="list -la"

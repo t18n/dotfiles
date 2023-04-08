@@ -1,0 +1,5 @@
+% Remote server
+
+# Copy public key to remote server
+ssh-copy-id -i ~/.ssh/id_rsa.pub <remote_server_user>@<remote_server_address>
+

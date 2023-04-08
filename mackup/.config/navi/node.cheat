@@ -1,0 +1,47 @@
+######################################################
+######################################################
+% node
+
+# Check Nodelicenses excluding permissive
+license-checker --exclude 'MIT, MIT OR X11, BSD, ISC, Public Domain'
+
+
+
+######################################################
+######################################################
+% npm
+# NPM run script
+npm run <script>
+
+# NPM install and save
+npm install --save <package_name>
+
+# NPM install and save dev
+npm install --save-dev <package_name>
+
+# NPM show all globally installed package
+npm ls -g --depth=0
+
+
+
+######################################################
+######################################################
+% yarn
+
+# Yarn upgrade packages interactively
+yarn upgrade-interactive
+
+# Yarn install a package locally
+yarn add <package>
+
+# Yarn install a dev package locally
+yarn add --dev <package>
+
+# Yarn remove a package locally
+yarn remove <package>
+
+# Yarn install a package globally
+yarn add global <package>
+
+# Yarn show info of package
+yarn info <package_name> time

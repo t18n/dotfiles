@@ -1,0 +1,17 @@
+mackup/.yarnrc
+mackup/.aws/credentials
+
+mackup/.tmux/plugins
+!mackup/.tmux/plugins/tpm
+
+mackup/Library
+mackup/alfred/Alfred.alfredpreferences/workflows
+
+**/.env
+**/.DS_Store
+**/default.profraw
+**/.ssh
+**/.tmux/resurrect
+**/credentials
+**/id_*
+**/.gitconfig

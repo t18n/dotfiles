@@ -1,0 +1,9 @@
+######################################################
+######################################################
+% homebrew
+
+# Clean up Homebrew
+brew bundle dump && brew bundle --force cleanup && brew cleanup && brew cask cleanup && brew update && brew upgrade
+
+# Show all top-level installed packages
+brew leaves

@@ -1,0 +1,25 @@
+######################################################
+######################################################
+% tmux
+
+# Turn on broadcast all panes
+tmux setw synchronize-panes on
+
+# Turn off broadcast all panes
+tmux setw synchronize-panes off
+
+# Rename a session
+tmux rename-session -t <old_name> <new_name>
+
+# Rename the session and window
+tmux rename-session <new_name> && tmux rename-window <new_name>
+
+# Source config
+tmux source-file ~/.tmux.conf
+
+# Fetch plugins and source it
+echo "prefix + I"
+
+# Kill all tmux session
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+

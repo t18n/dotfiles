@@ -1,0 +1,4 @@
+% Linux
+
+# Turn off gnome alert sound
+gsettings set org.gnome.desktop.sound event-sounds false

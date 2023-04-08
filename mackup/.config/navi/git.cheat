@@ -1,0 +1,276 @@
+% git diff
+
+# Diff branch changes parent-child
+git diff <parent_branch>..<child_branch>
+
+# Fuzzy diff
+git fuzzy diff <parent_branch>..<child_branch>
+
+# Show what changed
+git whatchanged -p --abbrev-commit --pretty=medium
+
+
+
+######################################################
+######################################################
+% git config
+
+# Show All Git config
+git config --list
+
+# Edit config
+git config --global --edit
+
+# Initializes a git repository
+git init && touch .gitignore && echo '/node_modules' >> .gitignore && ls -la
+
+# Clone a reposistory
+git clone <repo_url>
+
+# Set global git user name
+git config --global user.name <name>
+
+# Set global git user email
+git config --global user.email <email>
+
+# Show git information
+onefetch
+
+
+
+######################################################
+######################################################
+% git remote origin
+
+# Set a remote origin
+git remote add origin <repo_ssh_origin>
+
+# Show origins
+git remote show origin
+
+# Change origins
+git remote set-url origin <remote_url>
+
+# Rebase on base origin branch
+git fetch origin <base_branch> && git rebase <base_branch>
+
+######################################################
+######################################################
+% git commit
+
+# Add all changes to staging
+git add .
+
+# Show current status # git status
+git fuzzy status
+
+# Create commit with message
+git commit -m "<commit_message>"
+
+# Add all to staging and create commit
+git add . && git commit -m "<commit_message>"
+
+# Remove a file from Git staging
+git rm -r --cached <file_path>
+
+# Change file name casing
+git mv -f <old_name> <new_name>
+
+# Replace/amend last commit by new commit with same staging
+git commit --amend
+
+# Uncommit last commit
+git reset --soft HEAD~1
+
+
+######################################################
+######################################################
+% git reset
+
+# Unstage a file
+git reset -- <file_path>
+
+
+######################################################
+######################################################
+% git tag
+
+# Show all tags in creator date order
+git tag --sort=-creatordate 
+
+# Show last tag of ONLY current branch
+git describe --abbrev=0
+
+# Show last tag of ONLY current branch with pattern. e.g: v[0-9]*
+git describe --match "<pattern>" --abbrev=0 HEAD
+
+# Show last tag of ALL branches
+git describe --tags `git rev-list --tags --max-count=1`
+
+# Show last tag of ALL branches with pattern
+git describe --tags `git rev-list --tags="<pattern>" --max-count=1`
+
+
+######################################################
+######################################################
+% git stash
+
+# Show file change in stash
+git stash show --text
+
+# Git stash ultility
+git fuzzy stash
+
+
+
+######################################################
+######################################################
+% git branch
+
+# Checkout a branch
+git checkout <selected_branch_name>
+
+# Git branch
+git fuzzy branch
+
+# Delete a local branch
+git branch -d <branch_name>
+
+# Delete a remote branch
+git push -d origin <branch_name>
+
+# Delete multiple branches
+git_del_branches
+
+# Delete branches by prefix
+git branch -d `git branch --list '<prefix>*'`
+
+# Show what changed
+git whatchanged -p --abbrev-commit --pretty=medium
+
+# Interactively rebase
+git rebase -i <branch_name_or_commit_hash>
+
+# Fix up all history into only one commit
+git reset $(git commit-tree HEAD^{tree} -m <new_git_commit_message>)
+
+# Copy current branch name
+git branch | grep "*" | awk '{ print $2 }' | pbcopy
+
+# Checkout a previous command - V1
+git checkout -
+
+# Checkout a previous command - V2
+git checkout -
+
+# Rebase the previous branch you were working with, on to the current branch
+git rebase -
+
+# Merge to the previous branch you were working with, on to the current branch
+git merge -
+
+# Copy current branch name
+git branch --show-current | pbcopy
+
+
+$ selected_branch_name: git for-each-ref --sort='-authordate:relative' --format='%(refname:short)' refs/heads/ --- --column 1
+
+
+######################################################
+######################################################
+% git new branch
+
+# Create new branch
+git checkout -b <new_branch_name>
+
+# Rename a branch
+git branch -m <new_branch_name>
+
+
+
+######################################################
+######################################################
+% git push - pull
+
+# Push to associated remote repo
+git push
+
+# Forcefully push to associated remote repo
+git push -f
+
+# Create a branch on origin and push there
+git push -u origin <branch_name>
+
+# Push to a same upstream branch
+git push --set-upstream origin $(git_current_branch)
+
+# Set to the same upstream branch
+git branch --set-upstream-to=origin/$(git_current_branch) $(git_current_branch)
+
+# Pull from associated remote repo
+git pull
+
+
+######################################################
+######################################################
+% git log
+
+# Fun last commit
+git log -1 | random-cowsay | lolcat
+
+# Show git history log (verbose) # git log
+git fuzzy log
+
+# Show git history log (brief)
+git log --pretty=oneline --abbrev-commit
+
+# Show git history log (graph)
+git log --oneline --decorate --graph
+
+# Show git history log all (graph)
+git log --oneline --decorate --graph --all
+
+# Show git history log (verbose in graph)
+git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'
+
+# Show git history log all (verbose in graph)
+git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
+
+# Find a file in git history
+git log --all --full-history -- <path_to_file>
+
+# Remove a file from git history
+git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch <path_to_file>' HEAD
+
+######################################################
+######################################################
+% git github
+
+# Github Show list of issues
+gh issue list
+
+# Github Show PR list
+gh pr list
+
+
+######################################################
+######################################################
+% git branch
+
+# Squash the whole branch into a single commit https://stackoverflow.com/a/23486788
+git reset $(git commit-tree HEAD^{tree} -m "<new_message>")
+
+
+######################################################
+######################################################
+% git bisect
+
+# Start bisecting
+git bisect start && git bisect good <known_good_commit> && git bisect bad <known_bad_commit_null_for_current>
+
+# Abort bisect
+git bisect reset
+
+
+# Delete a path from Git history
+git filter-repo --path <path_to_delete> --invert-paths

@@ -1,0 +1,4 @@
+% mac os
+
+# Add ssh key passphrase to Keychain
+ssh-add --apple-use-keychain ~/.ssh/<ssh_key_name>

@@ -1,0 +1,87 @@
+######################################################
+######################################################
+% docker manage
+
+# Show Dry - interactive Docker dashboard
+dry
+
+# Show all active containers (verbose)
+docker ps
+
+# Show all active containers (brief)
+docker ps | less -S
+
+# Show all containers (brief)
+docker ps -a | less -S
+
+# Show all Docker images
+docker images
+
+# Remove a Docker image
+docker image rm <image_id>
+
+# Remove a Docker container
+docker rm <container_id>
+
+# Stop a container
+docker stop <container_id>
+
+# Stop all containers
+docker stop $(docker ps -q)
+
+# Start a container
+docker start <container_id>
+
+# SSH to a running Docker container
+sudo docker exec -it <container_id> bash
+
+# Show a Docker container logs
+docker logs
+
+# Inspect a Docker container IP address
+docker inspect <container_id> | grep 'IpAddress'
+
+
+
+######################################################
+######################################################
+% docker clean
+
+# Remove all unused containers, networks, images
+docker system prune -a
+
+# Remove all unused containers, networks, images, volumes
+docker system prune -a --volumes
+
+# Remove all dangling images
+docker image prune
+
+# Remove all unused images
+docker image prune -a
+
+# Remove all stopped containers
+docker container prune
+
+
+
+######################################################
+######################################################
+% docker compose
+
+# Start compose in detached mode
+docker-compose up -d
+
+# Start compose in detached mode (verbose)
+docker-compose --verbose up -d
+
+# Start compose with attached mode
+docker-compose up
+
+# Start compose in detached after rebuild image
+docker-compose up -d --build
+
+# Restart compose
+docker-compose stop && docker-compose up
+
+# Shutdown compose
+docker-compose down

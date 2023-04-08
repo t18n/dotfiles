@@ -1,0 +1,15 @@
+######################################################
+######################################################
+% Finder
+
+# Show all hidden files
+defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app
+
+# Hide all hidden files
+defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app
+
+# Hide a file with path
+chflags hidden <file_path_name>
+
+# List folder in tree shape
+tree -L <level_number> .

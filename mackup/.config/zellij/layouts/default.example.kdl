@@ -1,0 +1,35 @@
+// Define a default layout, which will be loaded automatically when Zellij starts.
+// Customize this to your liking, or use the default layout.
+// This layout will be used if no layout is specified in the config file.
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Amazing" cwd="/Users/me" split_direction="Vertical" {
+        pane split_direction="Vertical" {
+            pane size="50%"
+            pane size="50%"
+        }
+    }
+    tab split_direction="Vertical" {
+        pane split_direction="Vertical" {
+            pane size="50%"
+            pane size="50%"
+        }
+    }
+    tab split_direction="Vertical" {
+        pane split_direction="Vertical" {
+            pane size="50%"
+            pane size="50%" split_direction="Horizontal" {
+                pane size="50%"
+                pane size="50%"
+            }
+        }
+    }
+}

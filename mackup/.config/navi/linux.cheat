@@ -1,0 +1,4 @@
+% linux
+
+# List all fonts
+fc-list -v

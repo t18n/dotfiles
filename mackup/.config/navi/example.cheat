@@ -1,0 +1,6 @@
+% Example
+
+# Example with default value
+echo <echo_value>
+
+$ echo_value: echo 'I am default'

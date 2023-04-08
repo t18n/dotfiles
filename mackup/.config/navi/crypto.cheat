@@ -1,0 +1,6 @@
+% Crypto
+
+# Decrypt a base64 string
+echo <base64_string> > <temp_file_path> && base64 --decode <temp_file_path>
+
+$ temp_file_path: echo '~/Downloads/base64-to-decrypt.txt'

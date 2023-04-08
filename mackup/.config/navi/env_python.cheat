@@ -1,0 +1,20 @@
+% pyenv
+
+# List available packages
+pyenv install --list
+
+# List installed Python versions
+pyenv versions
+
+# List installed Python versions from root location
+ls ~/.pyenv/versions/
+
+# Install a python version
+pyenv install <python_version>
+
+# Set global version
+pyenv global <python_version>
+
+% pip
+# List installed packages
+python -m pip list

@@ -1,0 +1,18 @@
+######################################################
+######################################################
+% Shell
+
+# Test shell start up time
+for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
+
+# Check time shell start up
+shell=${1-$SHELL}; for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+
+# Source ZSH config, reload terminal
+source ~/.zshrc
+
+# Reload shell
+exec "$SHELL"
+
+# Show current shell
+ps -p $$

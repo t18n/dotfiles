@@ -1,0 +1,63 @@
+######################################################
+######################################################
+% system
+
+# Show number of CPU cores and logical CPU
+sysctl hw.physicalcpu hw.logicalcpu
+
+# Find a port number
+lsof -w -n -i tcp:<port_number>
+
+# List all files with color (verbose)
+colorls -lA --sd
+
+# List all files with color (brief)
+colorls -a
+
+# List all folders with color
+colorls -d
+
+# Show system info
+neofetch
+
+# Print history lines
+fc -l <from_line> <to_line>
+
+# Copy current path to clipboard
+pwd | pbcopy
+
+# Show default gateway
+netstat -nr | grep default
+
+# Get default local IP address
+ipconfig getifaddr en0 | pbcopy
+
+# Open htop config
+code $HOME/.config/htop/htoprc
+
+# Open hosts config
+sudo vim /etc/hosts
+
+# Kill port
+kill-port --port <port>
+
+# Kill a program
+pkill <program_name>
+
+# Clear Babel watch processes
+ps -ef | grep "$(pwd)\|babel-watch\|bin\/node" | grep -v grep | awk '{print $2}' | xargs kill
+
+# Mac: Remember SSH key password
+ssh-add -K <path_to_private_key>
+
+# Copy recursively with progress
+rsync -av --progress --stats <source_path> <destination_path>
+
+# Get HOSTNAME
+scutil --get HostName
+
+# Get MAC address
+ifconfig en0 | grep ether | awk '{print $2}'
+
+# Get Hardware MAC address
+networksetup -listallhardwareports | awk -v RS= '/en0/{print $NF}'

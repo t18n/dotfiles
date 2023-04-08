@@ -1,0 +1,20 @@
+% Duplicacy
+
+# Check snapshots intergrity
+duplicacy check
+
+# Show info of my-bucket storage
+duplicacy info <storage_name>
+
+# Show all snapshots of a backup id
+duplicacy list -id <backup_id>
+
+# Export all files of a backup revision
+duplicacy list -id <backup_id> -r <backup_revision> -files >> <temporary_folder>/dupplicacy-<backup_id>-revision-<backup_revision>.log && code <temporary_folder>/dupplicacy-<backup_id>-revision-<backup_revision>.log
+
+# Restore a pattern to Download
+cd <temporary_folder> && duplicacy restore -r 1 -stats -hash '<restore_file_pattern>'
+
+$ storage_name: echo 'b2://my-bucket'
+$ backup_id: echo 'nas-backup'
+$ temporary_folder: echo '$HOME/Downloads'

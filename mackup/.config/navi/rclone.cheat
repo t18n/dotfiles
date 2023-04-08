@@ -1,0 +1,7 @@
+% Rclone
+
+# List all remote files
+rclone lsd <host_name>:/
+
+# List originals
+rclone ls <host_name>:/
