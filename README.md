@@ -7,17 +7,12 @@
     - [First steps](#first-steps)
     - [More steps](#more-steps)
     - [Back up changes](#back-up-changes)
+  - [My toolkit](#my-toolkit)
     - [Maintenance](#maintenance)
   - [Manage backup](#manage-backup)
     - [Manage apps to sync or unsync](#manage-apps-to-sync-or-unsync)
     - [Add apps to backup](#add-apps-to-backup)
-    - [Restore your application settings on a newly installed workstation.](#restore-your-application-settings-on-a-newly-installed-workstation)
-    - [Backup configurations from machine](#backup-configurations-from-machine)
-    - [Uninstall mackup](#uninstall-mackup)
   - [Git Submodules](#git-submodules)
-    - [Add a new submodule/package](#add-a-new-submodulepackage)
-    - [Update/pull all submodules](#updatepull-all-submodules)
-  - [My toolkit](#my-toolkit)
 
 ## Introduction
 
@@ -26,7 +21,7 @@ My dotfiles backup that ultilizes [git submodules](https://git-scm.com/book/en/v
 > NOTE: Please read the instruction very carefully before you run any command, script on your _existing_ environment. I highly recommend to take the parts you use only and not `restore` everything on your computer, since a lot of these tools are configured spefically for my needs. 🌹
 
 > NOTE: VSCode provide a sync feature which is much more sophisticated than dotfiles, so it is not used here.
->
+
 > NOTE: Applications that doesn't store configuration files in `$HOME` or `$HOME/.config` are generally not included here.
 
 ### Security
@@ -55,6 +50,23 @@ Backup script is intentionally set up to run manually, which allow me to review 
 2. Run backup script `~/dotfiles/scripts/backup.sh`
 3. Review changes and push commit
 
+## My toolkit
+
+Below are the main applications that I use, some of them are not included in this repo backup but I would love to share with you.
+
+A lot of these tools are free thanks to the wonderful open-source contributors. If you love the tools, please consider to donate to appreciate their efforts.
+
+- [Git](https://git-scm.com/): Distributed version control system
+- [Kitty](https://sw.kovidgoyal.net/kitty/): Fast and feature-rich terminal emulator
+- [Zellij](https://github.com/zellij-org/zellij): A terminal workspace with batteries included
+- [Navi](https://github.com/denisidoro/navi): Interactive cheatsheet viewer for the command line
+- [RTX](https://github.com/jdxcode/rtx): Runtime Executor (asdf rust clone)
+- [Colima](https://github.com/abiosoft/colima): Container runtimes on macOS (and Linux) with minimal setup
+- [VSCode](https://github.com/microsoft/vscode): Amazing code editor
+- [Brave Browser](https://github.com/brave/brave-browser): Chromium-based privacy focus browser
+
+More tools can be found in [tools I use](./docs/tools-I-use.md)
+
 ### Maintenance
 
 ## Manage backup
@@ -74,43 +86,13 @@ I you want convenience, there are a bunch of supported applications. All support
 In case an application is not supported, you can add a `*.cfg` file to `./.mackup` folder.
 Then update `mackup/.mackup.cfg`.
 
-### Restore your application settings on a newly installed workstation.
-
-Run `mackup restore`
-
-### Backup configurations from machine
-
-Run `mackup restore`
-
-### Uninstall mackup
-
-Run `mackup uninstall`
+- `mackup restore`: Restore your application settings on a newly installed workstation
+- `mackup restore`: Backup configurations from machine
+- `mackup uninstall`: Revert mackup-modified files
 
 ## Git Submodules
 
 Sometimes, a library might not be available as a installable package (zplug, tmux-url-select, etc.), or it is just a repo that consist of data (cowsay, fortunes, etc.), we use git `submodule` to download the packages as well as keeping them up-to-date.
 
-### Add a new submodule/package
-
-Run `git submodule add https://github.com/new_plugin.git mackup/packages/new_plugin`
-
-### Update/pull all submodules
-
-Run `git submodule update --init --recursive`
-
-## My toolkit
-
-Below are the main applications that I use, some of them are not included in this repo backup but I would love to share with you.
-
-A lot of these tools are free thanks to the wonderful open-source contributors. If you love the tools, please consider to donate to appreciate their efforts.
-
-- [Git](https://git-scm.com/): Distributed version control system
-- [Kitty](https://sw.kovidgoyal.net/kitty/): Fast and feature-rich terminal emulator
-- [Zellij](https://github.com/zellij-org/zellij): A terminal workspace with batteries included
-- [Navi](https://github.com/denisidoro/navi): Interactive cheatsheet viewer for the command line
-- [RTX](https://github.com/jdxcode/rtx): Runtime Executor (asdf rust clone)
-- [Colima](https://github.com/abiosoft/colima): Container runtimes on macOS (and Linux) with minimal setup
-- [VSCode](https://github.com/microsoft/vscode): Amazing code editor
-- [Brave Browser](https://github.com/brave/brave-browser): Chromium-based privacy focus browser
-
-More tools can be found in [tools I use](./docs/tools-I-use.md)
+- `git submodule add https://github.com/new_plugin.git mackup/packages/new_plugin`: Add a new submodule/package
+- `git submodule update --init --recursive`: Update/pull all submodules
