@@ -61,3 +61,6 @@ ifconfig en0 | grep ether | awk '{print $2}'
 
 # Get Hardware MAC address
 networksetup -listallhardwareports | awk -v RS= '/en0/{print $NF}'
+
+# Tree with size
+tree -L <number_of_level> --dirsfirst

@@ -8,6 +8,7 @@
     - [More steps](#more-steps)
     - [Back up changes](#back-up-changes)
   - [My toolkit](#my-toolkit)
+  - [Project structure](#project-structure)
     - [Maintenance](#maintenance)
   - [Manage backup](#manage-backup)
     - [Manage apps to sync or unsync](#manage-apps-to-sync-or-unsync)
@@ -66,6 +67,27 @@ A lot of these tools are free thanks to the wonderful open-source contributors. 
 - [Brave Browser](https://github.com/brave/brave-browser): Chromium-based privacy focus browser
 
 More tools can be found in [tools I use](./docs/tools-I-use.md)
+
+## Project structure
+
+Following diagram explains the main purpose of the repo structure
+
+```sh
+.
+├── mackup                          # Backup files = $HOME
+│   ├── .config                     # Backup files = $HOME/.config
+│   └── .mackup                     # Folder for all backup apps config
+│       ├── my-dotfiles.cfg         # Configuration for what files to backup
+│   ├── packages                    # A folder that consists of all packages that are managed through `git submodules`
+│   ├── .mackup.cfg                 # Mackup configuration file
+├── package_dump                    # A folder that consist of all globally installed packages dump files
+├── scripts:                        # All available scripts
+│   ├── backup.sh:                  # Script to run backup, dump files
+│   ├── bootstrap-mac.sh            # Script to bootstrap a new computer
+│   └── sync-packages.sh            # Script tp install all dump packages from package_dump
+├── CHANGELOG.md                    # Manual changelog I use to journal my stack changes over time
+└── README.md                       # Main documentation
+```
 
 ### Maintenance
 
