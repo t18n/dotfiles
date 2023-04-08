@@ -6,6 +6,7 @@
   - [Getting started](#getting-started)
     - [First steps](#first-steps)
     - [More steps](#more-steps)
+    - [Back up changes](#back-up-changes)
   - [Manage backup](#manage-backup)
     - [Manage apps to sync or unsync](#manage-apps-to-sync-or-unsync)
     - [Add apps to backup](#add-apps-to-backup)
@@ -55,6 +56,14 @@ The [mackup configuration](mackup/.mackup.cfg) consist of only `[applications_to
 
 1. Set ZSH as a main shell: `chsh -s $(which zsh)`
 2. Install runtimes: `rtx install`
+
+### Back up changes
+
+Backup script is intentionally set up to run manually, which allow me to review changes before push, since this is a public repo. If you are interested in the automated script, checkout the `feat/with-automated-backup` branch for the `automate-backup.sh` script. Following is the manual flow:
+
+1. Go to the directory `cd ~/dotfiles`
+2. Run backup script `~/dotfiles/scripts/backup.sh`
+3. Review changes and push commit
 
 ## Manage backup
 

@@ -9,16 +9,6 @@ mkdir -p "$BACKUP_DIR"
 PACKAGE_DUMP_DIR="$BACKUP_DIR/package_dump"
 mkdir -p "$PACKAGE_DUMP_DIR"
 
-THIS_SCRIPT_FULL_PATH="$BACKUP_DIR/scripts/$(basename -- "$0")"
-
-if [ -f $THIS_SCRIPT_FULL_PATH ]
-then
-    echo "✅ $THIS_SCRIPT_FULL_PATH found."
-else
-    echo "⛔️ $THIS_SCRIPT_FULL_PATH not found."
-    exit 1
-fi
-
 echo "🛳  Cruising over to $BACKUP_DIR"
 cd $BACKUP_DIR
 
@@ -69,24 +59,5 @@ else
     echo "⛔️ Could not export Cargo packages"
 fi
 
-####################################################################################
-# Version and Push changes
-####################################################################################
-if ! git diff --quiet HEAD || git status --short; then
-  pwd
-  mackup backup -f # Force backup
-  git add .
-  git commit -m "update(${HOSTNAME}): $(date -u)"
-  git pull
-  git push
-fi
-
-####################################################################################
-# If crontab hasn't setup for this task, make an hourly backup script
-####################################################################################
-if ! crontab -l | grep "$THIS_SCRIPT_FULL_PATH"; then
-  (
-    crontab -l
-    echo "0 * * * * $THIS_SCRIPT_FULL_PATH > /dev/null 2>&1" # Run every hour -> https://crontab.guru/every-1-hour
-  ) | sort - | uniq - | crontab - 2>&1
-fi
+# Check git status
+git status
