@@ -5,6 +5,7 @@ alias cheats="code $NAVI_PATH"
 alias dotfiles="code ~/dotfiles"
 alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
 alias R="source ~/.zshrc"
+alias emu="zellij"
 
 # Common utils
 alias list="exa"
