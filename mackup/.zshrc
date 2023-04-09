@@ -11,6 +11,9 @@ source <(navi widget zsh)
 eval "$(rtx activate zsh)"
 eval "$(rtx hook-env)" # In case rtx doesn't work with tmux https://github.com/jdxcode/rtx#rtx-isnt-working-with-tmux
 
+# Activate zoxide
+eval "$(zoxide init zsh)"
+
 # Autostart Zellij
 # eval "$(zellij setup --generate-auto-start zsh)"
 

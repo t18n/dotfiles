@@ -4,19 +4,18 @@
 alias cheats="code $NAVI_PATH"
 alias dotfiles="code ~/dotfiles"
 alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
-alias R="source ~/.zshrc"
-alias emu="zellij"
 
 # Common utils
-alias list="exa"
-alias go="zoxide"
-alias view="bat"
-alias trash="trash"
-alias monitor="btop"
-
-alias hh="hstr"
-alias search="rg"
-
+alias S="source ~/.zshrc" # Reload shell
+alias e="zellij" # Emulation
+alias l="exa" # List
+alias g="z" # Go
+alias gi="zi" # go interactive
+alias v="bat" # View
+alias t="trash" # Trash
+alias m="btop" # Monitor
+alias h="hstr" # History
+alias s="rg" # Search
 
 # Tools
 alias systeminfo="neofetch && macinfo"
