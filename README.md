@@ -5,7 +5,6 @@
     - [Security](#security)
   - [Getting started](#getting-started)
     - [First steps](#first-steps)
-    - [More steps](#more-steps)
     - [Back up changes](#back-up-changes)
   - [My toolkit](#my-toolkit)
   - [Project structure](#project-structure)
@@ -14,6 +13,7 @@
     - [Manage apps to sync or unsync](#manage-apps-to-sync-or-unsync)
     - [Add apps to backup](#add-apps-to-backup)
   - [Git Submodules](#git-submodules)
+  - [👀 Keeping an eye on](#-keeping-an-eye-on)
 
 ## Introduction
 
@@ -35,15 +35,12 @@ The [mackup configuration](mackup/.mackup.cfg) consist of only `[applications_to
 
 ### First steps
 
-1. Clone the repo `git clone git@github.com:turbothinh/dotfiles.git ~/dotfiles`
-2. Navigate into the folder `cd  ~/dotfiles`
-3. Pull all submodules `git submodule update --init --recursive`
-4. Run bootstrap script `~/dotfiles/scripts/bootstrap-mac.sh`
-
-### More steps
-
-1. Set ZSH as a main shell: `chsh -s $(which zsh)`
-2. Install runtimes: `rtx install`
+1. Clone the repo `git clone git@github.com:turboninh/dotfiles.git ~/dotfiles && cd  ~/dotfiles`
+2. Pull all submodules `git submodule update --init --recursive`
+3. Choose your path
+   1. _Clean PC_: Run bootstrap script `~/dotfiles/scripts/bootstrap-mac.sh`
+   2. _Running PC_: `mackup backup`
+4. Set ZSH as a main shell: `chsh -s $(which zsh)`
 
 ### Back up changes
 
@@ -120,3 +117,11 @@ Sometimes, a library might not be available as a installable package (zplug, tmu
 
 - `git submodule add https://github.com/new_plugin.git mackup/packages/new_plugin`: Add a new submodule/package
 - `git submodule update --init --recursive`: Update/pull all submodules
+
+## 👀 Keeping an eye on
+
+- [NuShell](https://github.com/nushell/nushell): A new type of shell that combines the traditional Unix shell features with modern languages and modern data structures
+  - Start time too slow
+  - May need to use `rust-coreutils` for POSIX-compliant
+- [Helix](https://helix-editor.com/): A post-modern modal text editor.
+  - Plugin echo-system
