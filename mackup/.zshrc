@@ -89,3 +89,6 @@ zplug load # source plugins and add commands to $PATH
 #         echo "Running alias: $1, which expands to: $actual_command"
 #     fi
 # }
+
+# Source broot
+source $HOME/.config/broot/launcher/bash/br
