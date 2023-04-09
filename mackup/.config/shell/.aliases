@@ -12,6 +12,7 @@ alias list="exa"
 alias go="zoxide"
 alias view="bat"
 alias trash="trash"
+alias monitor="btop"
 
 alias hh="hstr"
 alias search="rg"
