@@ -1,21 +1,10 @@
 #
 # Sourcing packages. Keep this at the top of the file so the packages are available to the rest of the file
 ##########################################################################################
-# Activate homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
-
-# Add Navi to ZSH completion, use as a widget to your shell
-source <(navi widget zsh) 
 
 # Activate rtx
 eval "$(rtx activate zsh)"
 eval "$(rtx hook-env)" # In case rtx doesn't work with tmux https://github.com/jdxcode/rtx#rtx-isnt-working-with-tmux
-
-# Activate zoxide
-eval "$(zoxide init zsh)"
-
-# Autostart Zellij
-# eval "$(zellij setup --generate-auto-start zsh)"
 
 #
 # Start up commands
@@ -24,7 +13,6 @@ eval "$(zoxide init zsh)"
 COWS=($HOME/packages/cowsay-files/cows/*) # More: https://github.com/bkendzior/cowfiles
 RAND_COW=$(($RANDOM % $(/bin/ls $HOME/packages/cowsay-files/cows/*.cow | wc -l)))
 fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat
-
 
 ##########################################################################################
 #                                   Source stuff                                      #
@@ -80,15 +68,20 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug load # source plugins and add commands to $PATH
 
-# Preexec function to intercept command execution in ZSH
-# function preexec() {
-#     local actual_command=$(whence -w $1)
-#     if [[ -z $actual_command ]]; then
-#         echo "Running command: $1"
-#     else
-#         echo "Running alias: $1, which expands to: $actual_command"
-#     fi
-# }
-
 # Source broot
 source $HOME/.config/broot/launcher/bash/br
+
+# Activate homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# Add Navi to ZSH completion, use as a widget to your shell
+# This allow a Navi command to be edittable before execution
+# as well as populating the history correctly
+eval "$(navi widget zsh)"
+
+# Activate zoxide
+eval "$(zoxide init zsh)"
+
+bindkey '^f' _navi_widget
+bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+bindkey -s "\C-u" "source ~/.zshrc \C-M"

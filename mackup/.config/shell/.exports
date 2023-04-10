@@ -26,7 +26,8 @@ export GIT_FUZZY_BRANCH_DELETE_BRANCH_KEY='Ctrl-D'
 #
 # Navi
 ##########################################################################################
-export NAVI_PATH=$HOME/.config/navi
+export NAVI_PATH=$HOME/.config/navi/cheats
+export NAVI_CONFIG=$HOME/.config/navi/config.yaml
 
 # Navi colors - https://github.com/redox-os/termion/blob/189222555ef92a29de366f96d2a067b3a920fc24/src/color.rs#L62-L77
 export NAVI_TAG_COLOR=5
@@ -46,8 +47,5 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
-
-# HSTR configuration - add this to ~/.zshrc
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
-bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
