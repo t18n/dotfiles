@@ -2,6 +2,13 @@
 # Sourcing packages. Keep this at the top of the file so the packages are available to the rest of the file
 ##########################################################################################
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Activate rtx
 eval "$(rtx activate zsh)"
 eval "$(rtx hook-env)" # In case rtx doesn't work with tmux https://github.com/jdxcode/rtx#rtx-isnt-working-with-tmux
@@ -43,12 +50,8 @@ zplug "paulirish/git-open", as:plugin
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ZSH_THEME="powerlevel10k"
+source ~/packages/powerlevel10k/powerlevel10k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -62,7 +65,7 @@ fi
 # Auto completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=lightgrey'
 
 # To manage zplug itself like other packages, write the following in your .zshrc.
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'

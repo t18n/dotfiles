@@ -13,3 +13,6 @@
 [submodule "mackup/packages/change-mac-address"]
 	path = mackup/packages/change-mac-address
 	url = git@github.com:turboninh/change-mac-address-and-host-name.git
+[submodule "mackup/packages/powerlevel10k"]
+	path = mackup/packages/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
