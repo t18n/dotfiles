@@ -85,3 +85,4 @@ eval "$(zoxide init zsh)"
 bindkey '^f' _navi_widget
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 bindkey -s "\C-u" "source ~/.zshrc \C-M"
+bindkey -s "\C-e" "e \C-M"
