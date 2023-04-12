@@ -1636,6 +1636,11 @@
   # can slow down prompt by 1-2 milliseconds, so it's better to keep it turned off unless you
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
+  
+  # Mitigation for resizing issue in Kitty
+  # enable terminal-shell integration in Powerlevel10k
+  # https://github.com/romkatv/powerlevel10k/blob/master/README.md#mitigation
+  POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
 
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
