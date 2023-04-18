@@ -115,6 +115,32 @@
     # example               # example user-defined segment (see prompt_example function below)
   )
 
+  # Don't shorten directories that contain any of these files. They are anchors.
+  local anchor_files=(
+    .bzr
+    .citc
+    .git
+    .hg
+    .node-version
+    .python-version
+    .go-version
+    .ruby-version
+    .lua-version
+    .java-version
+    .perl-version
+    .php-version
+    .tool-version
+    .shorten_folder_marker
+    .svn
+    .terraform
+    CVS
+    Cargo.toml
+    composer.json
+    go.mod
+    package.json
+    stack.yaml
+  )
+
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-complete
   # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
@@ -225,31 +251,7 @@
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=39
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
-  # Don't shorten directories that contain any of these files. They are anchors.
-  local anchor_files=(
-    .bzr
-    .citc
-    .git
-    .hg
-    .node-version
-    .python-version
-    .go-version
-    .ruby-version
-    .lua-version
-    .java-version
-    .perl-version
-    .php-version
-    .tool-version
-    .shorten_folder_marker
-    .svn
-    .terraform
-    CVS
-    Cargo.toml
-    composer.json
-    go.mod
-    package.json
-    stack.yaml
-  )
+
   typeset -g POWERLEVEL9K_SHORTEN_FOLDER_MARKER="(${(j:|:)anchor_files})"
   # If set to "first" ("last"), remove everything before the first (last) subdirectory that contains
   # files matching $POWERLEVEL9K_SHORTEN_FOLDER_MARKER. For example, when the current directory is
@@ -1652,3 +1654,19 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+
+# Author: @turboninh
+# Description: Custom theme for powerlevel10k
+#-------------------------------------------------------#
+
+# Get all shell colors
+# for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+
+# Directory
+# https://github.com/romkatv/powerlevel10k/blob/master/README.md#directory-is-difficult-to-see-in-prompt-when-using-rainbow-style
+#-------------------------------------------------------#
+POWERLEVEL9K_DIR_FOREGROUND=254
+POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=252
+POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=249
+POWERLEVEL9K_DIR_ANCHOR_BOLD=247

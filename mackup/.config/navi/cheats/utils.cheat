@@ -1,7 +1,0 @@
-% Utils
-
-# Check Copenhagen weather
-curl wttr.in/Copenhagen
-
-# Get public IP address
-host myip.opendns.com resolver1.opendns.com

@@ -1,4 +1,4 @@
-% Rclone
+% App Rclone
 
 # List all remote files
 rclone lsd <host_name>:/

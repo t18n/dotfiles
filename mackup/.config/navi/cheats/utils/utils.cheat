@@ -1,0 +1,4 @@
+% Utils
+
+# Check Copenhagen weather
+curl wttr.in/Copenhagen

@@ -1,4 +1,4 @@
-% youtube-dl
+% App Youtube DL
 
 # Download mp3 best possible quality
 youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 '<video_url>'

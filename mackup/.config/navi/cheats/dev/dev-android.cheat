@@ -1,7 +1,7 @@
 
 ######################################################
 ######################################################
-% app dev
+% Dev Android
 
 # Open Android emulator
 android-emulator -avd <emulator_name>
@@ -11,12 +11,6 @@ emulator -avd Pixel_4_API_R
 
 # Show list of installed Android emulators
 android-emulator -list-avds
-
-# Open a simulator
-open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
-
-# Flutter widgets kitchensink
-chrome https://x-wei.github.io/flutter_catalog/
 
 # Mirror connected Android screen
 scrcpy
@@ -35,3 +29,7 @@ xcrun xctrace list devices
 
 # Print Android log
 adb logcat -s <tag_name>:<priority>
+
+
+# Flutter widgets kitchensink
+chrome https://x-wei.github.io/flutter_catalog/

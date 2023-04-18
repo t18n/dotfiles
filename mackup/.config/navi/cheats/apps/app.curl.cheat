@@ -1,0 +1,10 @@
+% Curl
+
+# Check URL status
+curl -s -o /dev/null -v <ip_address/URL>
+
+# Check what Twitter bot see from a URL
+curl -A "Twitterbot" <URL>
+
+# Test Gzip request
+curl -H 'Accept-Encoding: gzip' -I <url>

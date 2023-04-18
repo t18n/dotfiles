@@ -1,7 +1,0 @@
-% ssh
-
-# VPS Cloud server
-ssh $MY_VPS_CLOUD_IP_SSH
-
-# Storage box
-ssh $MY_VPS_CLOUD_STORAGE_BOX_SSH

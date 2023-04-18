@@ -1,5 +1,10 @@
-% Remote server
+% SSH
+
+# VPS Cloud server
+ssh $MY_VPS_CLOUD_IP_SSH
+
+# Storage box
+ssh $MY_VPS_CLOUD_STORAGE_BOX_SSH
 
 # Copy public key to remote server
 ssh-copy-id -i ~/.ssh/id_rsa.pub <remote_server_user>@<remote_server_address>
-
