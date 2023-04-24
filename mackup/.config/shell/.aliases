@@ -8,8 +8,10 @@ alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
 # Common utils
 alias S="source ~/.zshrc" # Reload shell
 alias e="zellij" # Emulation
-alias l="exa" # List
+alias l="lsd" # List
 alias la="l -la" # List all
+alias lla='ls -la'
+alias lt='ls --tree'
 alias g="z" # Go
 alias gi="zi" # go interactive
 alias v="bat" # View

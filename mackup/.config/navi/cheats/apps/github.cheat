@@ -1,5 +1,16 @@
-% Github Actions
+% Github
 
+# Open associated PR in browser
+gh pr view --web
+
+# Open associated issue in browser
+gh issue view --web
+
+# Open associated repo in browser
+gh repo view --web
+
+
+% Github Action Development
 # Show all Actions
 act -l
 

@@ -82,6 +82,8 @@ git commit --amend
 # Uncommit last commit
 git reset --soft HEAD~1
 
+# Copy last commit hash
+git rev-parse HEAD | pbcopy
 
 ######################################################
 ######################################################
