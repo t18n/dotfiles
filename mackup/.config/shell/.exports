@@ -1,3 +1,5 @@
+export EDITOR=${EDITOR:-nvim}
+
 #
 # Global environment variables
 ##########################################################################################
@@ -43,12 +45,23 @@ export NAVI_FZF_OVERRIDES="--height 80% --border --no-exact"
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 # Start with history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HIST_STAMPS="yyyy-mm-dd"
+export HISTSIZE=250000
+export SAVESIZE=25000
 setopt appendhistory
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 
 # LSD colors https://github.com/lsd-rs/lsd#colors
 export LS_COLORS="$(vivid generate dracula)"
+
+# Auto completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=lightgrey'
+
+# Bat
+export BAT_CONFIG_PATH="~/.config/bat/bat.conf"

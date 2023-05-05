@@ -1,6 +1,3 @@
-[submodule "mackup/packages/zplug"]
-	path = mackup/packages/zplug
-	url = git@github.com:zplug/zplug.git
 [submodule "mackup/packages/fortunes"]
 	path = mackup/packages/fortunes
 	url = git@github.com:bmc/fortunes.git

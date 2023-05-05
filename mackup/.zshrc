@@ -17,61 +17,12 @@ COWS=($HOME/packages/cowsay-files/cows/*) # More: https://github.com/bkendzior/c
 RAND_COW=$(($RANDOM % $(/bin/ls $HOME/packages/cowsay-files/cows/*.cow | wc -l)))
 fortune | cowsay -f ${COWS[$RAND_COW]} | lolcat
 
-# IMPORTANT: Anything that needs to be done before the prompt shows should go above this line.
-# https://github.com/romkatv/powerlevel10k/blob/master/README.md#how-do-i-configure-instant-prompt
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ##########################################################################################
 #                                   Source stuff                                      #
 ##########################################################################################
 source ~/.config/shell/.exports
 source ~/.config/shell/.env
 source ~/.config/shell/.aliases
-
-##########################################################################################
-#                                   Theme & Plugins                                      #
-##########################################################################################
-export ZPLUG_HOME=~/packages/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-autosuggestions", defer:2
-
-zplug "bigH/git-fuzzy", as:command, use:"bin/git-fuzzy"
-
-zplug "plugins/command-not-found", from:oh-my-zsh
-zplug "plugins/thefuck", from:oh-my-zsh
-zplug "plugins/compleat", from:oh-my-zsh
-
-zplug "paulirish/git-open", as:plugin
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-zplug "romkatv/powerlevel10k", as:theme, depth:1
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo
-        zplug install
-    fi
-fi
-
-# Auto completion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=lightgrey'
-
-# To manage zplug itself like other packages, write the following in your .zshrc.
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug load # source plugins and add commands to $PATH
 
 # Source broot
 source $HOME/.config/broot/launcher/bash/br
@@ -88,3 +39,7 @@ bindkey '^f' _navi_widget
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 bindkey -s "\C-u" "source ~/.zshrc \C-M"
 bindkey -s "\C-e" "e \C-M"
+
+
+# Activate sheldon package manager. List of plugins can be found in ~/.config/sheldon/plugins.toml
+eval "$(sheldon source)"
