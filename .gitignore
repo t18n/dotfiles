@@ -14,5 +14,5 @@ mackup/alfred/Alfred.alfredpreferences/workflows
 **/.tmux/resurrect
 **/credentials
 **/id_*
-**/.gitconfig
+**/.gitconfig.local
 **/default.profraw

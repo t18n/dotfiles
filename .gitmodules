@@ -1,6 +1,6 @@
-[submodule "mackup/packages/fortunes"]
+    [submodule "mackup/packages/fortunes"]
 	path = mackup/packages/fortunes
-	url = git@github.com:bmc/fortunes.git
+   	url = git@github.com:bmc/fortunes.git
 [submodule "mackup/packages/cowsay-files"]
 	path = mackup/packages/cowsay-files
 	url = git@github.com:paulkaefer/cowsay-files.git

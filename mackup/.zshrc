@@ -28,11 +28,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Auto completion
+# Auto completion: Allow insensitive casing
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=lightgrey'
-
 
 ##########################################################################################
 #                                   Source stuff                                      #
@@ -55,11 +54,49 @@ eval "$(zoxide init zsh)"
 bindkey '^f' _navi_widget
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 bindkey -s "\C-u" "source ~/.zshrc \C-M"
-bindkey -s "\C-e" "e \C-M"
-
+bindkey -s "\C-e" "E \C-M"
 
 # Activate sheldon package manager. List of plugins can be found in ~/.config/sheldon/plugins.toml
 eval "$(sheldon source)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# JINA_CLI_BEGIN
+
+## autocomplete
+if [[ ! -o interactive ]]; then
+    return
+fi
+
+compctl -K _jina jina
+
+_jina() {
+  local words completions
+  read -cA words
+
+  if [ "${#words}" -eq 2 ]; then
+    completions="$(jina commands)"
+  else
+    completions="$(jina completions ${words[2,-2]})"
+  fi
+
+  reply=(${(ps:
+:)completions})
+}
+
+# session-wise fix
+ulimit -n 4096
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# JINA_CLI_END
+
+
+
+
+
+
+
+
+

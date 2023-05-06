@@ -21,3 +21,6 @@ fortune | cowsay -f $(node -e "var c='$(cowsay -l)'.split('  ');console.log(c[Ma
 
 # Wipe and clean the terminal
 npx -y wipeclean
+
+# Convert a cowfile
+open https://charc0al.github.io/cowsay-files/converter/  

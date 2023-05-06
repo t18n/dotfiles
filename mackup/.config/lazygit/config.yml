@@ -3,7 +3,7 @@ gui:
   windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
   scrollHeight: 2 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.3333 # number from 0 to 1
+  sidePanelWidth: 0.25 # number from 0 to 1
   expandFocusedSidePanel: false
   mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
   language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
@@ -38,11 +38,17 @@ gui:
   showRandomTip: true
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: true
-  showIcons: false
-  commandLogSize: 8
+  showIcons: true
+  commandLogSize: 10
   splitDiff: 'auto' # one of 'auto' | 'always'
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
   border: 'single' # one of 'single' | 'double' | 'rounded' | 'hidden'
+  branchColors:
+    'feat': 'green'
+    'docs': 'blue'
+    'hotfix': 'magenta'
+    'fix': 'magenta'
+    'WIP': 'yellow'
 git:
   paging:
     colorArg: always
@@ -110,8 +116,8 @@ keybinding:
     gotoBottom: '>' # go to bottom of list
     scrollLeft: 'H' # scroll left within list view
     scrollRight: 'L' # scroll right within list view
-    prevBlock: '<left>' # goto the previous block / panel
-    nextBlock: '<right>' # goto the next block / panel
+    prevBlock: '[' # goto the previous block / panel
+    nextBlock: ']' # goto the next block / panel
     prevBlock-alt: 'h' # goto the previous block / panel
     nextBlock-alt: 'l' # goto the next block / panel
     jumpToBlock: ['1', '2', '3', '4', '5'] # goto the Nth block / panel
@@ -139,8 +145,8 @@ keybinding:
     pullFiles: 'p'
     refresh: 'R'
     createPatchOptionsMenu: '<c-p>'
-    nextTab: ']'
-    prevTab: '['
+    nextTab: '<left>'
+    prevTab: '<right>'
     nextScreenMode: '+'
     prevScreenMode: '_'
     undo: 'z'

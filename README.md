@@ -113,7 +113,7 @@ Then update `mackup/.mackup.cfg`.
 
 ## Git Submodules
 
-Sometimes, a library might not be available as a installable package (zplug, tmux-url-select, etc.), or it is just a repo that consist of data (cowsay, fortunes, etc.), we use git `submodule` to download the packages as well as keeping them up-to-date.
+Sometimes, a library might not be available as a installable package, or it is just a repo that consist of data (cowsay, fortunes, etc.), we use git `submodule` to download the packages as well as keeping them up-to-date.
 
 - `git submodule add https://github.com/new_plugin.git mackup/packages/new_plugin`: Add a new submodule/package
 - `git submodule update --init --recursive`: Update/pull all submodules

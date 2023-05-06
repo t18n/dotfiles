@@ -28,9 +28,10 @@ proto = "ssh"
 github = "zsh-users/zsh-syntax-highlighting"
 proto = "ssh"
 
-[plugins.zsh-vim-mode]
-github = "softmoth/zsh-vim-mode"
-proto = "ssh"
+# FIXME: This plugin disable ZSH keybindings for some reason.
+# [plugins.zsh-vim-mode]
+# github = "softmoth/zsh-vim-mode"
+# proto = "ssh"
 
 # [plugins.git-open]
 # github = "paulirish/git-open"
@@ -60,3 +61,10 @@ apply = ["defer"]
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
 proto = "ssh"
+
+# Zsh completions require that you also call compinit after modifying the fpath. At present Sheldon does not do this for you. The easiest way to fix this would be to make sure compinit is called after you source your Sheldon plugins. However, since you are deferring the loading of plugins which modify the fpath, you will also need to defer the compinit call so that it happens after the plugins modify fpath.
+# Note: since compinit does the actual work of loading the completions you might want to consider only deferring this particular call, not the ones that just modify fpath.
+
+# https://github.com/rossmacarthur/sheldon/issues/114#issuecomment-731586665
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit'

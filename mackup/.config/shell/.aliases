@@ -5,20 +5,23 @@ alias cheats="code $NAVI_PATH"
 alias dotfiles="code ~/dotfiles"
 alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
 
-# Common utils
+# Shell stuffs
 alias S="source ~/.zshrc" # Reload shell
-alias e="zellij" # Emulation
+alias E="zellij" # Terminal
+
+# Common utils
 alias l="lsd" # List
 alias la="l -la" # List all
 alias lla='ls -la'
 alias lt='ls --tree'
-alias g="z" # Go
+alias g="z" # Go to
 alias gi="zi" # go interactive
 alias v="bat" # View
 alias t="trash" # Trash
 alias m="btop" # Monitor
 alias h="hstr" # History
 alias s="rg" # Search
+alias e="nvim" # Editor
 
 # Tools
 alias systeminfo="neofetch && macinfo"
@@ -34,3 +37,4 @@ alias dotfiles-sync-packages="~/dotfiles/scripts/sync-packages.sh"
 alias p="pnpm"
 alias y="yarn"
 alias n="npm"
+alias nv="nvim"

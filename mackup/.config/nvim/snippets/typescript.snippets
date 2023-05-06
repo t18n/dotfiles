@@ -1,0 +1,59 @@
+snippet imp
+	import ${1:module} from '${2:module}'
+	$0
+	
+snippet exp
+	export ${1:default} ${2:expression}
+	$0
+	
+snippet fn
+	function ${1:name}(${2:params}) {
+		${3:// body}
+	}
+	$0
+	
+snippet arr
+	const ${1:name} = [${2:items}]
+	$0
+	
+snippet obj
+	const ${1:name} = {
+		${2:key}: ${3:value}
+	}
+	$0
+	
+snippet cls
+	class ${1:name} {
+		constructor(${2:params}) {
+			${3:// constructor body}
+		}
+	
+		${4:method}(${5:params}) {
+			${6:// method body}
+		}
+	}
+	$0
+	
+snippet if
+	if (${1:condition}) {
+		${2:// body}
+	}
+	$0
+	
+snippet el
+	else {
+		${1:// body}
+	}
+	$0
+	
+snippet wh
+	while (${1:condition}) {
+		${2:// body}
+	}
+	$0
+	
+snippet for
+	for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {
+		${3:// body}
+	}
+	$0

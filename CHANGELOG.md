@@ -1,6 +1,6 @@
 # CHANGELOG
 
-> This CHANGELOG is not automatically generated. It is created to journal my daily driver journey
+        > This CHANGELOG is not automatically generated. It is created to journal my daily driver journey
 
 ## Apr 2023
 

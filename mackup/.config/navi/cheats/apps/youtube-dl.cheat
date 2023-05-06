@@ -1,10 +1,16 @@
-% App Youtube DL
+% App Youtube DL, Yt-dlp, Video Downloader
 
 # Download mp3 best possible quality
-youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 '<video_url>'
+yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 '<video_url>'
 
 # Download m4a best quality, file size optimized
-youtube-dl -f bestaudio[ext=m4a] --embed-thumbnail --add-metadata '<video_url>'
+yt-dlp -f bestaudio[ext=m4a] --embed-thumbnail --add-metadata '<video_url>'
 
 # Download mp3 best possible quality from a file
-youtube-dl -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0  --batch-file='<link_list_file>'
+yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0  --batch-file='<link_list_file>'
+
+# Download English subtitles of a video
+yt-dlp --write-sub --sub-lang en --skip-download '<video_url>'
+
+# Download auto-generated English subtitles of a video
+yt-dlp --write-auto-sub --sub-lang en --skip-download '<video_url>'

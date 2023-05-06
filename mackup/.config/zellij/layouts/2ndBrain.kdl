@@ -1,0 +1,18 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+    tab name="🧠 Second Brain" cwd="/Users/turbothinh/Nextcloud/2ndBrain" split_direction="Vertical" focus=true{
+        pane split_direction="Vertical" {
+            pane size="35%" focus=true
+            pane size="35%" split_direction="Horizontal" {
+                pane size="50%"
+                pane size="50%"
+            }
+            pane size="30%"
+        }
+    }
+}

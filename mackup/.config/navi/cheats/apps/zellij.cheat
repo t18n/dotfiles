@@ -1,0 +1,9 @@
+% Zellij
+
+# Run a layout in a new tab
+zellij action new-tab --layout <layout_name>
+
+# Run a layout
+zellij action --layout <layout_name>
+
+$ layout_name: ls $HOME/dotfiles/mackup/.config/zellij/layouts | grep -v default.example.kdl | sed -e 's/\.kdl$//'

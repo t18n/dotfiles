@@ -19,7 +19,7 @@ fi
 # Install runtimes
 if test ! "$(command -v mackup)"; then
   echo "Installing mackup..."
-  brew install rtx
+     brew install rtx
   exit 1;
 fi
 
