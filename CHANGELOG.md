@@ -1,6 +1,18 @@
 # CHANGELOG
 
-        > This CHANGELOG is not automatically generated. It is created to journal my daily driver journey
+ This CHANGELOG is not automatically generated. It is created to journal my daily driver journey
+
+
+## Jun 2023
+
+- [Kitty](https://sw.kovidgoyal.net/kitty/): Fast and feature-rich terminal emulator
+- [Zellij](https://github.com/zellij-org/zellij): A terminal workspace with batteries included
+- [Navi](https://github.com/denisidoro/navi): Interactive cheatsheet viewer for the command line
+- [RTX](https://github.com/jdxcode/rtx): Runtime Executor (asdf rust clone)
+- [Colima](https://github.com/abiosoft/colima): Container runtimes on macOS (and Linux) with minimal setup
+- [Nvim](https://github.com/neovim/neovim): Amazing modal code editor
+- [Brave Browser](https://github.com/brave/brave-browser): Chromium-based privacy focus browser
+
 
 ## Apr 2023
 

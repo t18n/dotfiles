@@ -62,7 +62,7 @@ A lot of these tools are free thanks to the wonderful open-source contributors. 
 - [Navi](https://github.com/denisidoro/navi): Interactive cheatsheet viewer for the command line
 - [RTX](https://github.com/jdxcode/rtx): Runtime Executor (asdf rust clone)
 - [Colima](https://github.com/abiosoft/colima): Container runtimes on macOS (and Linux) with minimal setup
-- [VSCode](https://github.com/microsoft/vscode): Amazing code editor
+- [Nvim](https://github.com/neovim/neovim): Amazing modal code editor
 - [Brave Browser](https://github.com/brave/brave-browser): Chromium-based privacy focus browser
 
 More tools can be found in [tools I use](./docs/tools-I-use.md)
