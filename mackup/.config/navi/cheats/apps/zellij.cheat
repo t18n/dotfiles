@@ -1,9 +1,62 @@
 % Zellij
 
 # Run a layout in a new tab
-zellij action new-tab --layout <layout_name>
+ET
 
 # Run a layout
 zellij action --layout <layout_name>
 
 $ layout_name: ls $HOME/dotfiles/mackup/.config/zellij/layouts | grep -v default.example.kdl | sed -e 's/\.kdl$//'
+
+
+% Zellij shortcuts
+
+# Shortcuts from mackup/.config/zellij/config.kdl
+
+# Quit all windows
+Press Ctrl+b + Ctrl+q
+
+# Quit one tab
+Press Ctrl+b + Ctrl+x
+
+# Navigate between panes
+Press Ctrl+b + h|j|k|l + Enter
+
+# New pane vertically
+Press Ctrl+b + |
+
+# New pane horizontally
+Press Ctrl+b + /
+
+# Toggle fullscreen
+Press Ctrl+b + z
+
+# Rename tab
+Press Ctrl+b + r. Then type the new name and press Enter
+
+# Move pane
+Press Ctrl+b + m
+
+# Undo rename pane or tab
+Press Ctrl+b + u. Then press Enter
+
+# Sync all panes in a tab
+Press Ctrl+b + s. Then type the command and press Enter
+
+# Scroll
+Press Ctrl+b + b|f
+
+# Copy
+Press Ctrl+b + c
+
+# Search
+Press Ctrl+b + Ctrl+s. Then type the search term and press Enter
+
+# Resize
+Press Ctrl+b + +|-
+
+# Go to tab
+Press Ctrl+b + 1|2|3|4|5|6|7|8|9|>|<
+
+# Togle locked mode
+Press Ctrl+b + Enter

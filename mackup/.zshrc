@@ -51,10 +51,11 @@ eval "$(navi widget zsh)"
 # Activate zoxide
 eval "$(zoxide init zsh)"
 
-bindkey '^f' _navi_widget
+# bindkey '^g' _navi_widget
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
-bindkey -s "\C-u" "source ~/.zshrc \C-M"
+# bindkey -s "\C-u" "source ~/.zshrc \C-M"
 bindkey -s "\C-e" "E \C-M"
+bindkey -s "\C-t" "ET \C-M"
 
 # Activate sheldon package manager. List of plugins can be found in ~/.config/sheldon/plugins.toml
 eval "$(sheldon source)"

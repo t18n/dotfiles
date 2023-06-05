@@ -6,8 +6,9 @@ alias dotfiles="code ~/dotfiles"
 alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
 
 # Shell stuffs
-alias S="source ~/.zshrc" # Reload shell
+alias R="source ~/.zshrc" # Reload shell
 alias E="zellij" # Terminal
+alias ET="ls $HOME/dotfiles/mackup/.config/zellij/layouts | grep -v default.example.kdl | sed -e 's/\.kdl$//' | fzf --no-preview | xargs -I {} zellij action new-tab --layout {}" # Create a new tab with a layout
 
 # Common utils
 alias l="lsd" # List
@@ -35,6 +36,8 @@ alias dotfiles-sync-packages="~/dotfiles/scripts/sync-packages.sh"
 
 # Aliases
 alias p="pnpm"
+alias pr="pnpm run"
 alias y="yarn"
+alias yr="yarn run"
 alias n="npm"
-alias nv="nvim"
+alias nr="npm run"
