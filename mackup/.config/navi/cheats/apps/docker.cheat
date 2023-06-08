@@ -42,6 +42,10 @@ docker logs
 docker inspect <container_id> | grep 'IpAddress'
 
 
+% colima
+
+# Start Docker engine
+colima start --cpu 4 --memory 8
 
 ######################################################
 ######################################################

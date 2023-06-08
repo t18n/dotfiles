@@ -8,6 +8,11 @@ zellij action --layout <layout_name>
 
 $ layout_name: ls $HOME/dotfiles/mackup/.config/zellij/layouts | grep -v default.example.kdl | sed -e 's/\.kdl$//'
 
+# Attach first Zellij session
+zellij attach <session_name>
+
+$ session_name: zellij list-sessions
+
 
 % Zellij shortcuts
 

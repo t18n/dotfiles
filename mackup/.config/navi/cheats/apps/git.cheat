@@ -9,7 +9,11 @@ git fuzzy diff <parent_branch>..<child_branch>
 # Show what changed
 git whatchanged -p --abbrev-commit --pretty=medium
 
+# Show list of file changes between commits
+git log --name-only --pretty=oneline --full-index <oldest_head>..<most_recent_head> | grep -vE '^[0-9a-f]{40} ' | sort | uniq
 
+$oldest_head: git log --oneline
+$most_recent_head: git log --oneline
 
 ######################################################
 ######################################################
@@ -179,7 +183,6 @@ git branch | grep -v "develop" | grep -v "main" | grep -v "master" | xargs git b
 
 
 $ selected_branch_name: git for-each-ref --sort='-authordate:relative' --format='%(refname:short)' refs/heads/ --- --column 1
-
 
 ######################################################
 ######################################################

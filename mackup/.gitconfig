@@ -3,7 +3,7 @@
   # templatedir = ~/.git_template
 
 [core]
-	editor = code --wait
+	# editor = code --wait
   excludesfile = ~/.gitignore
   # autocrlf = input
 

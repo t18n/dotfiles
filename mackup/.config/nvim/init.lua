@@ -1,1 +1,2 @@
-require("turbo") -- All configurations are in the folder /lua/turbo
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
