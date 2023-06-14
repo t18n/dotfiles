@@ -48,7 +48,9 @@ pkill <program_name>
 ps -ef | grep "$(pwd)\|babel-watch\|bin\/node" | grep -v grep | awk '{print $2}' | xargs kill
 
 # Mac: Remember SSH key password
-ssh-add -K <path_to_private_key>
+ssh-add -K $HOME/.ssh/<private_key>
+
+$private_key: ls ~/.ssh | grep id_ | grep -v .pub
 
 # Copy recursively with progress
 rsync -av --progress --stats <source_path> <destination_path>
