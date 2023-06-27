@@ -73,7 +73,7 @@ keybinds clear-defaults=true {
     }
 
      shared_except "tmux" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
 
 
