@@ -1,0 +1,7 @@
+% Python - Poetry
+
+# Install poetry
+curl -sSL https://install.python-poetry.org | POETRY_HOME=~/.local/share/pypoetry python3 -
+
+# Update poetry
+poetry self update

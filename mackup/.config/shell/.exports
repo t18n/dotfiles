@@ -62,3 +62,6 @@ export LS_COLORS="$(vivid generate dracula)"
 # Config paths
 export BAT_CONFIG_PATH="~/.config/bat/bat.conf"
 export ASDF_CONFIG_FILE="~/.config/asdf/.asdfrc"
+
+# Paths
+export PATH="/Users/turbothinh/.local/share/pypoetry/bin:$PATH"
