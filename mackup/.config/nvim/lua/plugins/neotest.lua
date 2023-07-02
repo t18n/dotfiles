@@ -1,0 +1,24 @@
+-- -- https://github.com/nvim-neotest/neotest#installation
+-- return {
+--   "nvim-neotest/neotest",
+--   dependencies = {
+--     "nvim-lua/plenary.nvim",
+--     "nvim-treesitter/nvim-treesitter",
+--     "antoinemadec/FixCursorHold.nvim",
+--   },
+--   opts = {
+--     setup = {
+--       adapters = {
+--         require("neotest-jest")({
+--           -- dap = { justMyCode = false },
+--         }),
+--         require("neotest-plenary"),
+--         require("neotest-vim-test")({
+--           -- ignore_file_types = { "python", "vim", "lua" },
+--         }),
+--       },
+--     },
+--   }
+-- }
+
+return {}
