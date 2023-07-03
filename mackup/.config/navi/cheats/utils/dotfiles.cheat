@@ -1,7 +1,7 @@
 % dotfiles
 
 # Open dotfiles
-code ~/dotfiles
+e ~/dotfiles
 
 # Open navi
-code ~/dotfiles/.mackup/.config/navi
+e ~/dotfiles/.mackup/.config/navi

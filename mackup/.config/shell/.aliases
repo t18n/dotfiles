@@ -1,9 +1,9 @@
 #
 # Aliases
 ##########################################################################################
-alias cheats="code $NAVI_PATH"
-alias dotfiles="code ~/dotfiles"
-alias layout="code ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
+alias cheats="e $NAVI_PATH"
+alias dotfiles="e ~/dotfiles"
+alias layout="e ~/dotfiles/mackup/.config/zellij/layouts/default.kdl"
 
 # Shell stuffs
 alias R="source ~/.zshrc" # Reload shell

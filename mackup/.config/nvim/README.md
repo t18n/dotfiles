@@ -3,6 +3,9 @@
 This configuration is based on the starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
+## Inspirations
+https://github.com/alpha2phi/modern-neovim/tree/268234975df52ef79237d248ad52a69590660e11/lua/plugins
+
 ## Tools
 - Mason: Used to manage linters, formatters, servers, etc.
 - Telescope: Used to search files, buffers, etc.
