@@ -1,5 +1,8 @@
-export EDITOR=${EDITOR:-nvim}
 export XDG_CONFIG_HOME="$HOME/.config"
+
+export EDITOR=${EDITOR:-nvim}
+export VISUAL=${EDITOR:-nvim}
+export GIT_EDITOR=${EDITOR:-nvim}
 
 #
 # Global environment variables
