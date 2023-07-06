@@ -4,3 +4,10 @@
 
 vim.opt.winbar = "%=%m %f"
 vim.opt.relativenumber = false
+
+-- Enable yank to clipboard on MacOS or Linux
+if vim.fn.has("unnamedplus") == 1 then
+  vim.o.clipboard = "unnamedplus"
+else
+  vim.o.clipboard = "unnamed"
+end
