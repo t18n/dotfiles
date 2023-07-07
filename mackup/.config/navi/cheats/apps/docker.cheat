@@ -66,6 +66,8 @@ docker image prune -a
 # Remove all stopped containers
 docker container prune
 
+# Remove all dangling volumes
+docker volume rm $(docker volume ls -qf dangling=true)
 
 
 ######################################################
