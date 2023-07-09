@@ -45,14 +45,18 @@ local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 return {
 	font = wezterm.font("FiraCode Nerd Font Mono"),
-	font_size = 13,
+	font_size = 14,
 	-- dpi = 144.0,
 	tab_max_width = 14,
 
 	window_decorations = "RESIZE",
-	window_background_opacity = 0.9,
+	window_background_opacity = 0.98,
 	tab_bar_at_bottom = true,
 	use_fancy_tab_bar = false,
+
+	visual_bell = {
+		fade_in_duration_ms = 100
+	},
 
 	-- Note: To enable sync with OS theme, checkout https://github.com/catppuccin/wezterm#usage
 	color_schemes = {

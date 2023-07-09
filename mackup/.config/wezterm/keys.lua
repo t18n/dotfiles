@@ -13,6 +13,7 @@ local function activate_pane(window, pane, pane_direction, vim_direction)
 	end
 end
 
+-- Docs: https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
 wezterm.on("activate_pane_r", function(window, pane)
 	activate_pane(window, pane, "Right", "l")
 end)
@@ -70,9 +71,14 @@ return {
 			mods = "LEADER",
 			action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
-		{ key = "h", mods = "CTRL", action = act.EmitEvent("activate_pane_l") },
-		{ key = "j", mods = "CTRL", action = act.EmitEvent("activate_pane_d") },
-		{ key = "k", mods = "CTRL", action = act.EmitEvent("activate_pane_u") },
-		{ key = "l", mods = "CTRL", action = act.EmitEvent("activate_pane_r") },
+
+		{ key = '1', mods = 'ALT', action = act.ActivatePaneByIndex(0) },
+		{ key = '2', mods = 'ALT', action = act.ActivatePaneByIndex(1) },
+		{ key = '3', mods = 'ALT', action = act.ActivatePaneByIndex(2) },
+		{ key = '4', mods = 'ALT', action = act.ActivatePaneByIndex(3) },
+		{ key = '5', mods = 'ALT', action = act.ActivatePaneByIndex(4) },
+		{ key = '6', mods = 'ALT', action = act.ActivatePaneByIndex(5) },
+
+		{ key = 'k', mods = 'CTRL', action = wezterm.action.ActivateCommandPalette },
 	},
 }

@@ -1,36 +1,50 @@
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
 local act = wezterm.action
 local mux = wezterm.mux
 
-wezterm.on("gui-startup", function(cmd)
+-- Docs: https://wezfurlong.org/wezterm/config/lua/gui-events/gui-startup.html?h=gui+startup
+wezterm.on('gui-startup', function(cmd)
 	-- allow `wezterm start -- something` to affect what we spawn
 	-- in our initial window
 	local args = {}
-	if cmd then
-		args = cmd.args
-	end
+	if cmd then args = cmd.args end
 
-	local home = wezterm.home_dir
+	-- Active project
+  local tab, pane, window = mux.spawn_window {
+		workspace = 'active-project',
+    cwd = wezterm.home_dir .. '/Code/active-project',
+    args = args,
+  }
+	tab:set_title('Active Project')
 
-	local tab_monitoring, window = mux.spawn_window({
-		workspace = "default",
-		cwd = home .. "/dotfiles",
-	})
+	pane:send_text 'git status\n'
 
-	local tab_project1 = window:spawn_tab({ cwd = home .. "/Code/Project1" })
-	tab_project1:set_title("Project1")
+	local pane_build = pane:split {
+		direction = 'Right',
+		size = 0.3
+	}
+	pane_build:send_text 'yarn native\n'
+
+  local pane_editor = pane_build:split {
+    direction = 'Bottom',
+    size = 0.5,
+  }
+	pane_editor:send_text 'yarn storybook\n'
 
 	window:gui_window():maximize()
-	tab_monitoring:send_text("btop\n")
-	tab_monitoring:set_title("Monitoring")
-
-	local dotfiles_tab = window:spawn_tab({
-		args = args,
-		cwd = home .. "/.dotfiles",
+	
+	-- Other reserved tabs
+	local tab_dotfiles = window:spawn_tab({
+		cwd = wezterm.home_dir .. '/dotfiles',
 	})
-	dotfiles_tab:set_title("dotfiles")
+	tab_dotfiles:set_title('Dotfiles')
 
-	window:gui_window():perform_action(act.ActivateTab(0), tab_project1)
+	local tab_dotfiles = window:spawn_tab({
+		cwd = wezterm.home_dir .. '/Code/Temp',
+	})
+	tab_dotfiles:set_title('Temp')
+	
+	window:gui_window():perform_action(act.ActivateTab(0), pane)
 end)
 
 return {}
