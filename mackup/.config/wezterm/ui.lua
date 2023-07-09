@@ -39,9 +39,10 @@ end)
 -- Available themes: https://wezfurlong.org/wezterm/colorschemes/a/index.html
 local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
 
--- custom.tab_bar.background = "#040404"
--- custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
--- custom.tab_bar.new_tab.bg_color = "#080808"
+-- custom.tab_bar.inactive_tab = {
+-- 	bg_color = '#5b5072',
+-- 	fg_color = '#808080',
+-- }
 
 return {
 	font = wezterm.font("FiraCode Nerd Font Mono"),
@@ -49,13 +50,18 @@ return {
 	-- dpi = 144.0,
 	tab_max_width = 14,
 
-	window_decorations = "RESIZE",
+	window_decorations = "RESIZE", -- Hide title bar
 	window_background_opacity = 0.98,
 	tab_bar_at_bottom = true,
 	use_fancy_tab_bar = false,
 
 	visual_bell = {
 		fade_in_duration_ms = 100
+	},
+
+	inactive_pane_hsb = {
+		saturation = 0.9,
+		brightness = 0.3,
 	},
 
 	-- Note: To enable sync with OS theme, checkout https://github.com/catppuccin/wezterm#usage
