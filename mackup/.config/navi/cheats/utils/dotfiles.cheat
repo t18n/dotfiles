@@ -5,3 +5,6 @@ e ~/dotfiles
 
 # Open navi
 e ~/dotfiles/.mackup/.config/navi
+
+# Check XDG
+xdg-ninja
