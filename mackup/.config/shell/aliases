@@ -41,3 +41,6 @@ alias y="yarn"
 alias yr="yarn run"
 alias n="npm"
 alias nr="npm run"
+
+# Yarn
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"

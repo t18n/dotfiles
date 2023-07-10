@@ -36,9 +36,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=lightgrey'
 ##########################################################################################
 #                                   Source stuff                                      #
 ##########################################################################################
-source ~/.config/shell/.exports
+source ~/.config/shell/exports
 source ~/.config/shell/.env
-source ~/.config/shell/.aliases
+source ~/.config/shell/aliases
 
 # Source broot
 source $HOME/.config/broot/launcher/bash/br
@@ -63,6 +63,10 @@ eval "$(sheldon source)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# ZSH custom locations
+autoload -Uz compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 # JINA_CLI_BEGIN
 
@@ -92,12 +96,4 @@ ulimit -n 4096
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # JINA_CLI_END
-
-
-
-
-
-
-
-
 
