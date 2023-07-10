@@ -79,6 +79,6 @@ return {
 		{ key = '5', mods = 'ALT', action = act.ActivatePaneByIndex(4) },
 		{ key = '6', mods = 'ALT', action = act.ActivatePaneByIndex(5) },
 
-		{ key = 'k', mods = 'CTRL', action = wezterm.action.ActivateCommandPalette },
+		{ key = 'k', mods = 'ALT', action = wezterm.action.ActivateCommandPalette },
 	},
 }
